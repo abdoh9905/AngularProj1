@@ -1,0 +1,42 @@
+<div style="margin-left: 40px; margin-bottom: 40px;">
+    <h1>Ajouter Produit</h1>
+</div>
+<div style=" margin-top: 80px;margin-left: 470px;" class="container">
+
+<div class="row">
+    <div class="col-md-6">
+<form >
+   
+    
+    <div class="form-row ">
+      <div class="form-group col-md-6">
+        <label for="Ref">Ref Produit</label>
+        <input type="text" class="form-control" formControlName="Ref" id="Ref" name="Ref" placeholder="Ref">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="namep">Nom du Produit</label>
+        <input type="text" class="form-control" id="namep" formControlName="namep" name="namep" placeholder="Nom Produit">
+      </div>
+    </div>
+    <div class="form-group ">
+      <label for="categ">Catégorie</label>
+      <input type="text" class="form-control" id="categ" formControlName="categ" name="categ" placeholder="Cosmetique,naturel....">
+    </div>
+    <div class="form-group ">
+        <label for="prix">Prix</label>
+        <input type="number" class="form-control" formControlName="prix" name="prix" id="prix">
+    </div>
+    <div class="form-group ">
+        <label for="qte">Quantité</label>
+        <input type="number" class="form-control" formControlName="qte" name="qte" id="qte">
+    </div>
+    <div class="form-group ">
+          <label for="exampleFormControlFile1">Ajouter une Image</label>
+          <input type="file" class="form-control-file" name="file">
+    </div>
+      
+    <button type="submit" class="btn btn-primary btn-block">Add product</button>
+  </form>
+  </div>
+  </div>
+  </div>

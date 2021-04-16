@@ -1,0 +1,55 @@
+
+ <h1 style="margin-left: 70px;">Customer Login</h1>
+ <div  style="margin-top: 100px;margin-left: 470px;" class="container">
+    
+     <div class="row">
+       <div class="col-md-6">
+           <div>
+           
+             <form #f="ngForm" (ngSubmit)="login()">
+                 <div class="form-group">
+                   <label for="email">Email address</label>
+                   <input type="email"
+                          email
+                          required
+                          ngModel
+                          [(ngModel)]="model.email"
+                          class="form-control"
+                          id="email" 
+                          name="email"
+                          #emailVar="ngModel"
+                          aria-describedby="emailHelp" 
+                          >
+                     
+                          <div *ngIf="emailVar.invalid && emailVar.touched" class="alert alert-danger">
+                           <div *ngIf="emailVar.errors?.required">Le champs est Obligatoire</div>
+                           <div *ngIf="emailVar.errors?.email">Le champs doit etre au format email(ex:adresse@mail.mm)</div>
+                       </div>
+                   
+                 </div>
+                 <div class="form-group">
+                   <label for="pass">Password</label>
+                   <input  ngModel
+                           [(ngModel)]="model.password"
+                           id="password"
+                           type="password"
+                           pattern="[a-z A-Z 0-9]+"
+                           class="form-control"
+                           minlength="8"
+                           required
+                           name="password" 
+                           #passVar="ngModel">
+                           <div *ngIf="passVar.invalid && passVar.touched" class="alert alert-danger">
+                             <div *ngIf="passVar.errors?.required">Le champs est Obligatoire</div>
+                             <div *ngIf="passVar.errors?.pattern">Le champs doit contenir les caractères et les numéros</div>
+                             <div *ngIf="passVar.errors?.minlength">Le champs doit contenir plus que 8 caractères</div>
+                         </div>
+                 </div>
+                 
+                 <button [disabled]="f.invalid" type="submit" class="btn btn-primary">Login</button>
+               </form>
+           </div>
+       </div>
+     </div>
+ </div>      
+ 
